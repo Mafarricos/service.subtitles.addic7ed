@@ -174,8 +174,7 @@ def Search(item):
 def download(link):
   subtitle_list = []
 
-  if xbmcvfs.exists(__temp__):
-    shutil.rmtree(__temp__)
+  if xbmcvfs.exists(__temp__): shutil.rmtree(__temp__)
   xbmcvfs.mkdirs(__temp__)
 
   file = os.path.join(__temp__, "addic7ed.srt")
@@ -195,7 +194,6 @@ def download(link):
       xbmc.executebuiltin((u'Notification(%s,%s)' % (__scriptname__ , __language__(32003))).encode('utf-8'))
 
   return subtitle_list
-
 
 def normalizeString(str):
   return unicodedata.normalize(
